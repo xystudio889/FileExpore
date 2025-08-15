@@ -10,6 +10,8 @@ print("=" * 30)
 folder = Path(__file__).parent.resolve()
 
 def ask_file_path():
+    files = ["", ""]
+
     while True:
         files[0] = input("请输入想要转换的文件：")
         if os.path.exists(files[0]):
@@ -52,7 +54,8 @@ elif select_type == "2":
     with open(files[1], 'w', encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False)
 elif select_type == "3":
-    os.system("powershell -ExecutionPolicy Bypass -File " + str(Path(folder, "copylink.ps1")))
-        
+    os.system("powershell -ExecutionPolicy Bypass -File " + str(Path(folder, "copylink.ps1")))        
 elif select_type == "4":
     exit()
+    
+os.system("pause")
