@@ -1,5 +1,8 @@
-makefile
+# nuitka build files
 *.exe
+*.build
+*.dist
+*.onefile-build
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

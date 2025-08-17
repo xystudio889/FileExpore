@@ -132,10 +132,13 @@ while True:
         if not program:
             print("未选择文件，程序退出……")
             break
-        command = filedialog.askopenfilename(title="请选择程序启动参数文件", filetypes=[("文本文件", "*.txt"), ("所有文件", "*.*")])
-        if not command:
+        command_file = filedialog.askopenfilename(title="请选择程序启动参数文件", filetypes=[("文本文件", "*.txt"), ("所有文件", "*.*")])
+        if not command_file:
             print("未选择文件，程序退出……")
             break
+        
+        with open(command_file, 'r', encoding=get_encoding(command_file)) as f:
+            command = f.read()
         os.system(f'"{program}" {command}')
     elif select_type == "5":
         break
