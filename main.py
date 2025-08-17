@@ -1,6 +1,5 @@
 # 导入库模块
 import os
-from pathlib import Path
 import chardet
 import json
 from tkinter import filedialog
@@ -15,8 +14,6 @@ print("v1.1.0更新日志：\n1.json文件处理添加格式化\n2.添加批量�
 print("\n")
 print("下个版本预告：添加批量处理模式")
 print("\n")
-
-folder = Path(__file__).parent.resolve()
 
 # 定义函数
 def get_encoding(file_path):
@@ -139,7 +136,7 @@ while True:
         if not command:
             print("未选择文件，程序退出……")
             break
-        os.system(f"{program} {command}")
+        os.system(f'"{program}" {command}')
     elif select_type == "5":
         break
     while True:
